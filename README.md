@@ -4,13 +4,23 @@ Site estático da marca pessoal Kika Magalhães, com portfólio autoral, página
 
 ## Pré-visualização local
 
-Não há dependências nem etapa de build. Na raiz do projeto, execute:
+Não há dependências complexas nem etapa de build. Na raiz do projeto, execute:
 
 ```bash
 python3 -m http.server 8080
 ```
 
 Depois acesse `http://localhost:8080`.
+
+## Implantação em Produção (VPS Hostinger via Docker)
+
+O site está preparado para ser publicado no VPS com Nginx e Traefik.
+
+Para subir o projeto no servidor:
+
+```bash
+docker compose -f docker-compose.production.yml up -d --build
+```
 
 ## Estrutura
 
@@ -33,12 +43,10 @@ Depois acesse `http://localhost:8080`.
 
 ## Subdomínios
 
-Os registros DNS normalmente serão do tipo `CNAME` para o endereço informado pela hospedagem. Além do DNS, os domínios precisam ser adicionados no painel da hospedagem para emissão de SSL e roteamento:
+Os registros DNS normalmente serão do tipo `CNAME` ou `A` apontando para o IP da VPS.
 
 - `creedbuilder.kikamagalhaes.com.br` → `/creedbuilder/`
 - `trefos.kikamagalhaes.com.br` → `/trefos/`
-
-A forma exata do redirecionamento depende do provedor de hospedagem.
 
 ## Projetos com domínio próprio
 

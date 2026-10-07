@@ -1,0 +1,20 @@
+.aider*
+.aider.tags.cache.v4/
+
+# Nunca publicar: dados de infraestrutura do servidor
+ACESSO-HOSTINGER-VPS.md
+
+# Segredos
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Binarios de app (usar GitHub Releases, nao o codigo-fonte)
+*.apk
+*.aab

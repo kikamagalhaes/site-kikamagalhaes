@@ -19,8 +19,13 @@ O site está preparado para ser publicado no VPS com Nginx e Traefik.
 Para subir o projeto no servidor:
 
 ```bash
+mkdir -p site
+# Copie para site/ somente os arquivos públicos (HTML, assets, robots e sitemap).
 docker compose -f docker-compose.production.yml up -d --build
 ```
+
+O diretório montado pelo Nginx é `site/`, mantendo documentação, configuração e
+arquivos privados fora da raiz pública.
 
 ## Estrutura
 
